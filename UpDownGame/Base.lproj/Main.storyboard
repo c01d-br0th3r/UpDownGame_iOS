@@ -8,6 +8,61 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Credit View Controller-->
+        <scene sceneID="MSf-NL-wB6">
+            <objects>
+                <viewController id="Yzc-1F-gj2" customClass="CreditViewController" customModule="UpDownGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B9o-jK-jfZ">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sDK-3J-tYz">
+                                <rect key="frame" x="284" y="20" width="548" height="353"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Hello World!
+
+https://github.com/c01d-br0th3r</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRs-TX-wWB">
+                                <rect key="frame" x="64" y="20" width="26" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" image="xmark.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchUpDismissButton:" destination="Yzc-1F-gj2" eventType="touchUpInside" id="xWR-jc-L9T"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yagom_symbol" translatesAutoresizingMaskIntoConstraints="NO" id="KQY-Kd-aRa">
+                                <rect key="frame" x="64" y="107" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="0eY-A5-I3U"/>
+                                    <constraint firstAttribute="width" constant="200" id="0fx-FB-oCk"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5F5-2A-yPn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sDK-3J-tYz" firstAttribute="leading" secondItem="KQY-Kd-aRa" secondAttribute="trailing" constant="20" id="8ZM-F1-e4x"/>
+                            <constraint firstItem="IRs-TX-wWB" firstAttribute="top" secondItem="5F5-2A-yPn" secondAttribute="top" constant="20" id="EGn-oC-p5p"/>
+                            <constraint firstItem="KQY-Kd-aRa" firstAttribute="leading" secondItem="IRs-TX-wWB" secondAttribute="leading" id="Ehb-Vo-1Zt"/>
+                            <constraint firstItem="5F5-2A-yPn" firstAttribute="bottom" secondItem="sDK-3J-tYz" secondAttribute="bottom" constant="20" id="HMJ-W6-4G8"/>
+                            <constraint firstItem="5F5-2A-yPn" firstAttribute="trailing" secondItem="sDK-3J-tYz" secondAttribute="trailing" constant="20" id="Ob4-ki-H0u"/>
+                            <constraint firstItem="sDK-3J-tYz" firstAttribute="top" secondItem="5F5-2A-yPn" secondAttribute="top" constant="20" id="ThN-13-O6j"/>
+                            <constraint firstItem="KQY-Kd-aRa" firstAttribute="centerY" secondItem="B9o-jK-jfZ" secondAttribute="centerY" id="TrY-Fy-g8w"/>
+                            <constraint firstItem="IRs-TX-wWB" firstAttribute="leading" secondItem="5F5-2A-yPn" secondAttribute="leading" constant="20" id="VtJ-va-1rj"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pZI-Vu-tEo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1322.5446428571429" y="-413.04347826086962"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -84,6 +139,9 @@
                                 <state key="normal" image="info.circle" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Yzc-1F-gj2" kind="presentation" modalTransitionStyle="crossDissolve" id="gcM-zV-tPp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -112,20 +170,32 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="maximumValueLabel" destination="K8g-lF-2IB" id="0If-xG-IV0"/>
+                        <outlet property="minimumValueLabel" destination="LrG-R2-gbD" id="3GV-Ds-kbZ"/>
                         <outlet property="slider" destination="GCK-Xh-MbU" id="K2r-hG-pxt"/>
+                        <outlet property="sliderValueLabel" destination="vIq-dC-saW" id="UQ9-pd-Hft"/>
+                        <outlet property="tryCountLabel" destination="zRF-L8-hHS" id="diH-kt-cXW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="239" y="-709"/>
+            <point key="canvasLocation" x="635" y="-413"/>
         </scene>
     </scenes>
     <resources>
         <image name="checkmark.seal" catalog="system" width="128" height="128"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="memories" catalog="system" width="128" height="110"/>
+        <image name="xmark.circle" catalog="system" width="128" height="121"/>
+        <image name="yagom_symbol" width="167" height="160.5"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
